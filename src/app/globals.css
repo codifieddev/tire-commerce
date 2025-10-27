@@ -1,26 +1,107 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Nike-style clean headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Nike-style button */
+  .btn-primary {
+    @apply bg-neutral-900 hover:bg-neutral-700 text-white font-medium py-4 px-6 rounded-full transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-neutral-100 text-neutral-900 font-medium py-4 px-6 rounded-full border-2 border-neutral-900 transition-all duration-300;
+  }
+
+  /* Nike-style card */
+  .nike-card {
+    @apply bg-white overflow-hidden group cursor-pointer;
+  }
+
+  /* Nike-style product card */
+  .product-card-nike {
+    @apply relative bg-neutral-50 rounded-lg overflow-hidden group;
+  }
+
+  .product-card-nike img {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Subtle focus */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-neutral-300 ring-offset-2;
+  }
+
+  /* Nike-style text sizes */
+  .text-display {
+    @apply text-6xl md:text-8xl font-black tracking-tighter;
+  }
+
+  .text-hero {
+    @apply text-4xl md:text-6xl font-bold;
+  }
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #f5f5f5 4%, #eeeeee 25%, #f5f5f5 36%);
+  background-size: 1000px 100%;
+}
+
+/* Smooth scroll snapping */
+.snap-container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-item {
+  scroll-snap-align: start;
 }
