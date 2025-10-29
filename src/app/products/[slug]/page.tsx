@@ -146,7 +146,7 @@ const relatedProducts = [
 ]
 
 export default function EnhancedProductPage() {
-  const [selectedSize, setSelectedSize] = useState(productData.sizes.value)
+  const [selectedSize, setSelectedSize] = useState(productData.sizes[0].value)
   const [quantity, setQuantity] = useState(1)
   const [activeAccordion, setActiveAccordion] = useState<string | null>('features')
   const [selectedImage, setSelectedImage] = useState(0)

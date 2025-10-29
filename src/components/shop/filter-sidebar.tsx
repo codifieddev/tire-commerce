@@ -3,11 +3,11 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-import type { Filters } from '@/app/shop/page'
+
 
 interface FilterSidebarProps {
-  filters: Filters
-  onFilterChange: (filters: Partial<Filters>) => void
+  filters: any
+  onFilterChange: (filters: Partial<any>) => void
 }
 
 const categories = ['Road', 'Gravel', 'MTB', 'Hybrid', 'E-Bike']
@@ -32,21 +32,21 @@ export function FilterSidebar({ filters, onFilterChange }: FilterSidebarProps) {
 
   const toggleCategory = (category: string) => {
     const newCategories = filters.categories.includes(category)
-      ? filters.categories.filter((c) => c !== category)
+      ? filters.categories.filter((c:any) => c !== category)
       : [...filters.categories, category]
     onFilterChange({ categories: newCategories })
   }
 
   const toggleSize = (size: string) => {
     const newSizes = filters.sizes.includes(size)
-      ? filters.sizes.filter((s) => s !== size)
+      ? filters.sizes.filter((s:any) => s !== size)
       : [...filters.sizes, size]
     onFilterChange({ sizes: newSizes })
   }
 
   const toggleProtection = (level: string) => {
     const newProtection = filters.protection.includes(level)
-      ? filters.protection.filter((p) => p !== level)
+      ? filters.protection.filter((p:any) => p !== level)
       : [...filters.protection, level]
     onFilterChange({ protection: newProtection })
   }

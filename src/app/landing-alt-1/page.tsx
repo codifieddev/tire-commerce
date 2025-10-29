@@ -1,5 +1,7 @@
+'use client'
 import Link from 'next/link'
 import { OptimizedImage } from '@/components/ui/optimized-image'
+import { motion } from 'framer-motion'
 
 export default function LandingAlt1() {
   return (

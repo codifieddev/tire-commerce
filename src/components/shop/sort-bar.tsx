@@ -2,13 +2,13 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Grid3x3, LayoutGrid, List, ChevronDown } from 'lucide-react'
-import type { ViewMode } from '@/app/shop/page'
+
 
 interface SortBarProps {
   sortBy: string
   onSortChange: (sort: string) => void
-  viewMode: ViewMode
-  onViewModeChange: (mode: ViewMode) => void
+  viewMode: any
+  onViewModeChange: (mode: any) => void
 }
 
 const sortOptions = [

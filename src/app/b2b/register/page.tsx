@@ -183,8 +183,8 @@ export default function B2BRegisterPage() {
                 />
               )}
 
-              {/* Step 2: Contact Details */}
-              {currentStep === 2 && (
+       
+              {/* {currentStep === 2 && (
                 <ContactInfoForm
                   data={contactInfo}
                   onChange={setContactInfo}
@@ -193,7 +193,7 @@ export default function B2BRegisterPage() {
                 />
               )}
 
-              {/* Step 3: Account Setup */}
+             
               {currentStep === 3 && (
                 <AccountSetupForm
                   data={accountInfo}
@@ -203,7 +203,7 @@ export default function B2BRegisterPage() {
                 />
               )}
 
-              {/* Step 4: Documents */}
+        
               {currentStep === 4 && (
                 <DocumentUploadForm
                   documents={documents}
@@ -212,7 +212,7 @@ export default function B2BRegisterPage() {
                   onBack={() => setCurrentStep(3)}
                   isSubmitting={isSubmitting}
                 />
-              )}
+              )} */}
             </motion.div>
           ) : (
             <SuccessMessage />

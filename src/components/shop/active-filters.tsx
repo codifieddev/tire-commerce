@@ -2,19 +2,19 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
-import type { Filters } from '@/app/shop/page'
+
 
 interface ActiveFiltersProps {
-  filters: Filters
-  onClearFilter: (filterType: keyof Filters, value?: string) => void
+  filters: any
+  onClearFilter: (filterType: keyof any, value?: string) => void
   onClearAll: () => void
 }
 
 export function ActiveFilters({ filters, onClearFilter, onClearAll }: ActiveFiltersProps) {
   const activeFilters = [
-    ...filters.categories.map((cat) => ({ type: 'categories' as const, value: cat, label: cat })),
-    ...filters.sizes.map((size) => ({ type: 'sizes' as const, value: size, label: size })),
-    ...filters.protection.map((prot) => ({
+    ...filters.categories.map((cat:any) => ({ type: 'categories' as const, value: cat, label: cat })),
+    ...filters.sizes.map((size:any) => ({ type: 'sizes' as const, value: size, label: size })),
+    ...filters.protection.map((prot:any) => ({
       type: 'protection' as const,
       value: prot,
       label: `${prot} Protection`,

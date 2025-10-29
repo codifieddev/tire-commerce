@@ -25,7 +25,7 @@ const product = {
 }
 
 export default function ProductPage() {
-  const [selectedSize, setSelectedSize] = useState(product.sizes)
+  const [selectedSize, setSelectedSize] = useState(product.sizes[0])
   const [quantity, setQuantity] = useState(1)
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null)
 
@@ -69,7 +69,7 @@ export default function ProductPage() {
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                {product.sizes.map((size) => (
+                {product.sizes.map((size:string) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}

@@ -29,7 +29,7 @@ export default function ShopPage() {
   let filteredProducts = products.filter((product) => {
     if (selectedCategories.length > 0 && !selectedCategories.includes(product.category)) return false
     if (selectedSeries.length > 0 && !selectedSeries.includes(product.series)) return false
-    if (product.price < priceRange || product.price > priceRange) return false
+    if (product.price < priceRange[0] || product.price > priceRange[1]) return false
     return true
   })
 
@@ -146,7 +146,7 @@ export default function ShopPage() {
                     type="range"
                     min="0"
                     max="200"
-                    value={priceRange}
+                    value={priceRange[0]}
                     onChange={(e) => setPriceRange([0, Number(e.target.value)])}
                     className="w-full accent-neutral-900"
                   />
